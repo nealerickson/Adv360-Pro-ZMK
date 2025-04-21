@@ -7,6 +7,8 @@
 
 &mt { flavor = "tap-preferred"; };
 
+&lt { tapping-term-ms = <250>; };
+
 / {
     behaviors {
         #include "macros.dtsi"
@@ -73,6 +75,29 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 37 46 47 48 49 50 51 52 53 60 61 62 63 64 65 66 67 68 70 69 38>;
             hold-trigger-on-release;
         };
+
+        idea_run: idea_run {
+            compatible = "zmk,behavior-tap-dance";
+            label = "IDEA_RUN";
+            #binding-cells = <0>;
+            bindings = <&mt LA(LC(R)) LG(NUMBER_4)>, <&kp LC(R)>;
+        };
+
+        idea_debug: idea_debug {
+            compatible = "zmk,behavior-tap-dance";
+            label = "IDEA_DEBUG";
+            #binding-cells = <0>;
+            bindings = <&mt LA(LC(D)) LG(N5)>, <&kp LC(D)>;
+        };
+    };
+
+    macros {
+        dbl_shft: dbl_shft {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT &kp LEFT_SHIFT>;
+            label = "DBL_SHFT";
+        };
     };
 
     keymap {
@@ -81,11 +106,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL             &kp N1               &kp N2           &kp N3                       &kp N4                           &kp N5  &tog 1                                                                                        &mo 3          &kp N6  &kp N7                           &kp N8                       &kp N9             &kp N0                  &kp MINUS
-&kp TAB               &kp Q                &kp W            &hml LS(LA(LEFT_CONTROL)) E  &hml LS(LA(LG(LEFT_CONTROL))) R  &kp T   &kp LS(LA(LC(NON_US_BACKSLASH)))                                                              &kp LG(SPACE)  &kp Y   &hmr LS(LA(LG(LEFT_CONTROL))) U  &hmr LS(LA(LEFT_CONTROL)) I  &kp O              &kp P                   &kp BSLH
-&mt LEFT_CONTROL ESC  &kp A                &kp S            &kp D                        &kp F                            &kp G   &none                             &kp LEFT_GUI  &kp LALT      &kp LEFT_CONTROL  &kp LEFT_GUI  &none          &kp H   &kp J                            &kp K                        &kp L              &kp SEMI                &kp SQT
-&kp LSHFT             &hml LEFT_CONTROL Z  &hml LEFT_ALT X  &hml LEFT_GUI C              &hml LEFT_SHIFT V                &kp B                                                   &kp HOME      &kp PG_UP                                      &kp N   &hmr LEFT_SHIFT M                &hmr LEFT_GUI COMMA          &hmr LEFT_ALT DOT  &hmr LEFT_CONTROL FSLH  &kp RSHFT
-&mo 2                 &kp GRAVE            &kp LG(GRAVE)    &kp LEFT                     &kp RIGHT                                &kp BSPC                          &kp DEL       &kp END       &kp PG_DN         &kp ENTER     &kp SPACE              &kp UP                           &kp DOWN                     &kp LBKT           &kp RBKT                &mo 2
+&kp EQUAL             &kp N1               &kp N2           &kp N3                       &kp N4                           &kp N5  &tog 1                                                                            &mo 3          &kp N6  &kp N7                           &kp N8                       &kp N9             &kp N0                  &kp MINUS
+&kp TAB               &kp Q                &kp W            &hml LS(LA(LEFT_CONTROL)) E  &hml LS(LA(LG(LEFT_CONTROL))) R  &kp T   &kp LS(LA(LC(BSLH)))                                                              &kp LG(SPACE)  &kp Y   &hmr LS(LA(LG(LEFT_CONTROL))) U  &hmr LS(LA(LEFT_CONTROL)) I  &kp O              &kp P                   &kp BSLH
+&mt LEFT_CONTROL ESC  &kp A                &kp S            &kp D                        &kp F                            &kp G   &none                 &kp LEFT_GUI  &kp LALT      &kp LEFT_CONTROL  &kp LEFT_GUI  &none          &kp H   &kp J                            &kp K                        &kp L              &kp SEMI                &kp SQT
+&kp LSHFT             &hml LEFT_CONTROL Z  &hml LEFT_ALT X  &hml LEFT_GUI C              &hml LEFT_SHIFT V                &kp B                                       &kp HOME      &kp PG_UP                                      &kp N   &hmr LEFT_SHIFT M                &hmr LEFT_GUI COMMA          &hmr LEFT_ALT DOT  &hmr LEFT_CONTROL FSLH  &kp RSHFT
+&mo 2                 &kp GRAVE            &kp LG(GRAVE)    &kp LEFT                     &kp RIGHT                                &kp BSPC              &lt 4 DELETE  &kp END       &kp PG_DN         &kp ENTER     &kp SPACE              &kp UP                           &kp DOWN                     &kp LBKT           &kp RBKT                &mo 2
             >;
         };
 
@@ -122,24 +147,14 @@
             >;
         };
 
-        extra1 {
-            display-name = "Red";
-            status = "reserved";
-        };
-
-        extra2 {
-            display-name = "Purple";
-            status = "reserved";
-        };
-
-        extra3 {
-            display-name = "Cyan";
-            status = "reserved";
-        };
-
-        extra4 {
-            display-name = "Yellow";
-            status = "reserved";
+        Idea {
+            bindings = <
+&none  &none          &none      &none       &idea_run  &idea_debug  &none                                      &none                  &kp LA(LG(R))      &kp F8                  &kp F7                &kp LS(F8)        &kp LG(F2)  &none
+&none  &none          &none      &kp LS(F6)  &none      &kp LG(N0)   &none                                      &kp LS(LA(LC(EQUAL)))  &kp LS(LG(Z))      &kp LG(Z)               &none                 &none             &none       &none
+&none  &kp LA(ENTER)  &none      &none       &none      &kp LA(F7)   &dbl_shft  &none  &none      &none  &none  &kp LS(LA(LC(MINUS)))  &kp LS(LA(LG(A)))  &kp LA(LS(DOWN_ARROW))  &kp LA(LS(UP_ARROW))  &kp LG(L)         &none       &none
+&none  &kp LA(LC(Z))  &kp LG(X)  &kp LG(C)   &kp LG(V)  &kp LG(B)                      &none      &none                                &kp LS(LG(LBKT))   &kp LG(LBKT)            &kp LG(RBKT)          &kp LG(LS(RBKT))  &none       &none
+&none  &none          &none      &none       &none                   &none      &none  &none      &none  &none  &kp LC(LS(SPACE))                         &kp LG(MINUS)           &kp LG(EQUAL)         &none             &none       &none
+            >;
         };
     };
 };
