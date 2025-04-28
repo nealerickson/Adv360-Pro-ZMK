@@ -179,11 +179,11 @@
 
         Cursor {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans      &trans            &trans        &trans        &trans          &trans     &trans                                      &trans  &trans           &trans          &trans         &trans           &trans  &bootloader
+&trans      &trans            &trans        &trans        &trans          &kp LG(X)  &trans                                      &trans  &kp HOME         &kp PAGE_DOWN   &kp PAGE_UP    &kp END          &trans  &trans
+&kp ESCAPE  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LG(C)  &trans  &trans  &trans      &trans  &trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &trans  &trans
+&trans      &trans            &kp SPACE     &kp TAB       &kp BACKSPACE   &kp LG(V)                  &trans      &trans                  &kp LS(LC(TAB))  &kp LG(LBKT)    &kp LG(RBKT)   &kp LC(TAB)      &trans  &trans
+&kp ENTER   &trans            &trans        &kp LS(TAB)   &kp DELETE                 &trans  &trans  &trans      &trans  &trans  &trans                   &kp LG(F)       &kp LS(LG(G))  &kp LG(G)        &trans  &kp ENTER
             >;
         };
 
