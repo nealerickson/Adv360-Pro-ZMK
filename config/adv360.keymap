@@ -80,7 +80,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "IDEA_RUN";
             #binding-cells = <0>;
-            bindings = <&mt LA(LC(R)) LG(NUMBER_4)>, <&kp LC(R)>;
+            bindings = <&kp LG(R)>, <&kp LS(LG(R))>;
         };
 
         idea_debug: idea_debug {
@@ -125,6 +125,20 @@
             bindings = <&mo>, <&kp>;
 
             retro-tap;
+        };
+
+        idea_replace: idea_replace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "IDEA_REPLACE";
+            #binding-cells = <0>;
+            bindings = <&kp LG(R)>, <&kp LG(LS(R))>;
+        };
+
+        idea_find: idea_find {
+            compatible = "zmk,behavior-tap-dance";
+            label = "IDEA_FIND";
+            #binding-cells = <0>;
+            bindings = <&kp LG(F)>, <&kp LG(LS(F))>;
         };
     };
 
@@ -175,11 +189,11 @@
 
         Idea {
             bindings = <
-&none  &none          &none      &none       &idea_run  &idea_debug  &none                                      &none                  &kp LA(LG(R))      &kp F8                  &kp F7                &kp LS(F8)        &kp LG(F2)  &none
-&none  &none          &none      &kp LS(F6)  &none      &kp LG(N0)   &none                                      &kp LS(LA(LC(EQUAL)))  &kp LS(LG(Z))      &kp LG(Z)               &none                 &none             &none       &none
-&none  &kp LA(ENTER)  &none      &none       &none      &kp LA(F7)   &dbl_shft  &none  &none      &none  &none  &kp LS(LA(LC(MINUS)))  &kp LS(LA(LG(A)))  &kp LA(LS(DOWN_ARROW))  &kp LA(LS(UP_ARROW))  &kp LG(L)         &none       &none
-&none  &kp LA(LC(Z))  &kp LG(X)  &kp LG(C)   &kp LG(V)  &kp LG(B)                      &none      &none                                &kp LS(LG(LBKT))   &kp LG(LBKT)            &kp LG(RBKT)          &kp LG(LS(RBKT))  &none       &none
-&none  &none          &none      &none       &none                   &none      &none  &none      &none  &none  &kp LC(LS(SPACE))                         &kp LG(MINUS)           &kp LG(EQUAL)         &none             &none       &none
+&none  &none          &none      &none       &idea_run      &idea_debug  &none                                      &none                  &kp LA(LG(R))      &kp F8                  &kp F7                &kp LS(F8)        &kp LG(F2)  &none
+&none  &none          &none      &kp LS(F6)  &idea_replace  &kp LG(N0)   &none                                      &kp LS(LA(LC(EQUAL)))  &kp LS(LG(Z))      &kp LG(Z)               &none                 &none             &none       &none
+&none  &kp LA(ENTER)  &kp LG(S)  &kp LG(D)   &idea_find     &kp LA(F7)   &dbl_shft  &none  &none      &none  &none  &kp LS(LA(LC(MINUS)))  &kp LS(LA(LG(A)))  &kp LA(LS(DOWN_ARROW))  &kp LA(LS(UP_ARROW))  &kp LG(L)         &none       &none
+&none  &kp LA(LC(Z))  &kp LG(X)  &kp LG(C)   &kp LG(V)      &kp LG(B)                      &none      &none                                &kp LS(LG(LBKT))   &kp LG(LBKT)            &kp LG(RBKT)          &kp LG(LS(RBKT))  &none       &none
+&none  &none          &none      &none       &none                       &none      &none  &none      &none  &none  &kp LC(LS(SPACE))                         &kp LG(MINUS)           &kp LG(EQUAL)         &none             &none       &none
             >;
         };
 
