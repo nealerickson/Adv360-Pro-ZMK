@@ -115,7 +115,7 @@
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
         };
-        
+
         space: thumb_layer_access_spacebar {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
@@ -123,6 +123,7 @@
             quick-tap-ms = <250>;
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
+
             retro-tap;
         };
     };
@@ -142,11 +143,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL             &kp N1                    &kp N2           &kp N3                       &kp N4                           &kp N5  &tog 6                                                                       &mo 2                    &kp N6  &kp N7                           &kp N8                       &kp N9             &kp N0                  &kp MINUS
-&kp TAB               &kp Q                     &kp W            &hml LS(LA(LEFT_CONTROL)) E  &hml LS(LA(LG(LEFT_CONTROL))) R  &kp T   &cbd_emoji                                                                   &mt LG(LC(Q)) LG(SPACE)  &kp Y   &hmr LS(LA(LG(LEFT_CONTROL))) U  &hmr LS(LA(LEFT_CONTROL)) I  &kp O              &kp P                   &kp BSLH
-&mt LEFT_CONTROL ESC  &kp A                     &kp S            &kp D                        &kp F                            &kp G   &none            &kp LEFT_GUI  &kp LALT      &kp LEFT_CONTROL  &kp LEFT_GUI  &none                    &kp H   &kp J                            &kp K                        &kp L              &kp SEMI                &kp SQT
-&skq LSHFT            &hml LEFT_CONTROL Z       &hml LEFT_ALT X  &hml LEFT_GUI C              &hml LEFT_SHIFT V                &kp B                                  &kp HOME      &kp PG_UP                                                &kp N   &hmr LEFT_SHIFT M                &hmr LEFT_GUI COMMA          &hmr LEFT_ALT DOT  &hmr LEFT_CONTROL FSLH  &skq RSHFT
-&kp LEFT_GUI          &mt LG(LEFT_SHIFT) GRAVE  &kp LG(GRAVE)    &kp EQUAL                    &kp MINUS                                &lt 6 BACKSPACE  &lt 3 DELETE  &kp END       &lt 7 PAGE_DOWN   &lt 5 ENTER   &lt 4 SPACE                      &kp LEFT_ARROW                   &kp DOWN                     &kp UP_ARROW       &kp RIGHT_ARROW         &mo 4
+&kp EQUAL             &kp N1                    &kp N2           &kp N3                       &kp N4                           &kp N5  &tog 6                                                                               &mo 2                    &kp N6  &kp N7                           &kp N8                       &kp N9             &kp N0                  &kp MINUS
+&kp TAB               &kp Q                     &kp W            &hml LS(LA(LEFT_CONTROL)) E  &hml LS(LA(LG(LEFT_CONTROL))) R  &kp T   &cbd_emoji                                                                           &mt LG(LC(Q)) LG(SPACE)  &kp Y   &hmr LS(LA(LG(LEFT_CONTROL))) U  &hmr LS(LA(LEFT_CONTROL)) I  &kp O              &kp P                   &kp BSLH
+&mt LEFT_CONTROL ESC  &kp A                     &kp S            &kp D                        &kp F                            &kp G   &none               &kp LEFT_GUI     &kp LALT      &kp LEFT_CONTROL  &kp LEFT_GUI    &none                    &kp H   &kp J                            &kp K                        &kp L              &kp SEMI                &kp SQT
+&skq LSHFT            &hml LEFT_CONTROL Z       &hml LEFT_ALT X  &hml LEFT_GUI C              &hml LEFT_SHIFT V                &kp B                                        &kp HOME      &kp PG_UP                                                  &kp N   &hmr LEFT_SHIFT M                &hmr LEFT_GUI COMMA          &hmr LEFT_ALT DOT  &hmr LEFT_CONTROL FSLH  &skq RSHFT
+&kp LEFT_GUI          &mt LG(LEFT_SHIFT) GRAVE  &kp LG(GRAVE)    &kp EQUAL                    &kp MINUS                                &thumb 6 BACKSPACE  &thumb 3 DELETE  &kp END       &lt 7 PAGE_DOWN   &thumb 5 ENTER  &space 4 SPACE                   &kp LEFT_ARROW                   &kp DOWN                     &kp UP_ARROW       &kp RIGHT_ARROW         &mo 4
             >;
         };
 
