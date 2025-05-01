@@ -140,6 +140,20 @@
             #binding-cells = <0>;
             bindings = <&kp LG(F)>, <&kp LG(LS(F))>;
         };
+
+        idea_collapse: idea_collapse {
+            compatible = "zmk,behavior-tap-dance";
+            label = "IDEA_COLLAPSE";
+            #binding-cells = <0>;
+            bindings = <&kp LG(MINUS)>, <&kp LG(LS(MINUS))>;
+        };
+
+        idea_expand: idea_expand {
+            compatible = "zmk,behavior-tap-dance";
+            label = "IDEA_EXPAND";
+            #binding-cells = <0>;
+            bindings = <&kp LG(EQUAL)>, <&kp LG(LS(EQUAL))>;
+        };
     };
 
     macros {
@@ -193,7 +207,7 @@
 &none  &none          &none      &kp LS(F6)  &idea_replace  &kp LG(N0)   &none                                      &kp LS(LA(LC(EQUAL)))  &kp LS(LG(Z))      &kp LG(Z)               &none                 &none             &none       &none
 &none  &kp LA(ENTER)  &kp LG(S)  &kp LG(D)   &idea_find     &kp LA(F7)   &dbl_shft  &none  &none      &none  &none  &kp LS(LA(LC(MINUS)))  &kp LS(LA(LG(A)))  &kp LA(LS(DOWN_ARROW))  &kp LA(LS(UP_ARROW))  &kp LG(L)         &none       &none
 &none  &kp LA(LC(Z))  &kp LG(X)  &kp LG(C)   &kp LG(V)      &kp LG(B)                      &none      &none                                &kp LS(LG(LBKT))   &kp LG(LBKT)            &kp LG(RBKT)          &kp LG(LS(RBKT))  &none       &none
-&none  &none          &none      &none       &none                       &none      &none  &none      &none  &none  &kp LC(LS(SPACE))                         &kp LG(MINUS)           &kp LG(EQUAL)         &none             &none       &none
+&none  &none          &none      &none       &none                       &none      &none  &none      &none  &none  &kp LC(LS(SPACE))                         &idea_collapse          &idea_expand          &none             &none       &none
             >;
         };
 
