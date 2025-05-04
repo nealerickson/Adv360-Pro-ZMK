@@ -243,7 +243,7 @@
 &kp EXCL           &kp COMMA  &kp LBRC          &kp RBRC           &kp SEMICOLON  &kp QUESTION  &kp AT_SIGN                                        &none       &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &none  &none
 &kp POUND          &kp CARET  &kp EQUAL         &kp UNDERSCORE     &kp DOLLAR     &kp ASTERISK  &kp BACKSLASH  &none      &none      &none  &none  &kp K_UNDO  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &kp ESCAPE
 &kp TILDE          &kp LT     &kp PIPE          &kp MINUS          &kp GT         &kp SLASH                               &none      &none                     &none           &kp BACKSPACE   &kp TAB       &kp SPACE        &none  &none
-&kp LS(AMPERSAND)  &kp GRAVE  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp PLUS                     &kp PERCENT    &kp COLON  &none      &none  &none  &none                       &kp DELETE      &kp LS(TAB)   &none            &none  &none
+&kp LS(AMPERSAND)  &kp GRAVE  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp PLUS                     &kp PERCENT    &kp COLON  &none      &none  &none  &none                       &kp DELETE      &kp LS(TAB)   &none            &none  &kp ENTER
             >;
         };
 
