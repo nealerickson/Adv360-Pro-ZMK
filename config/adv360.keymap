@@ -180,6 +180,15 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 37 46 47 48 49 50 51 52 53 60 61 62 63 64 65 66 67 68 70 69 38>;
             hold-trigger-on-release;
         };
+
+        n1_exclamation: n1_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            label = "N1_EXCLAMATION";
+            bindings = <&kp EXCLAMATION>, <&kp N1>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
