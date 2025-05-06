@@ -110,16 +110,16 @@
         thumb: thumb_layer_access {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <350>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <300>;
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
         };
 
         space: thumb_layer_access_spacebar {
             compatible = "zmk,behavior-hold-tap";
-            flavor = "balanced";
-            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
